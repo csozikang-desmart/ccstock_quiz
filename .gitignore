@@ -1,0 +1,18 @@
+# 缓存文件由后端运行时自动生成，不入库
+cache.json
+cache.*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+
+# 系统/IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
