@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a4f" />
+  <title>双创科技赛道 H5 答题小游戏</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <button id="btn-sound" class="sound-btn" type="button" aria-label="切换音效">声音 开</button>
+    <section id="screen-start" class="screen active">
+      <div class="hero-card">
+        <div class="badge">科创板 × 创业板</div>
+        <h1>双创科技赛道<br/>H5 答题小游戏</h1>
+        <p class="lead">看业务、追热点、猜时机。8 道随机题测测你的双创科技投资直觉。</p>
+        <div class="feature-grid">
+          <div><strong>业务题</strong><span>30 分</span></div>
+          <div><strong>热点题</strong><span>20 分</span></div>
+          <div><strong>时机题</strong><span>50 分</span></div>
+        </div>
+        <button id="btn-start" class="primary-btn">开始答题</button>
+        <p class="tiny">收益展示按“近期涨跌”口径：以今天为基准，回看 1 / 3 / 6 个月前买入至今。</p>
+      </div>
+    </section>
+
+    <section id="screen-quiz" class="screen">
+      <header class="topbar">
+        <button id="btn-restart" class="ghost-btn" type="button">重开</button>
+        <div class="progress-wrap">
+          <div class="progress-meta"><span id="progress-text">1/8</span><span id="score-preview">已答 0</span></div>
+          <div class="progress"><span id="progress-bar"></span></div>
+        </div>
+      </header>
+
+      <article class="question-card">
+        <div id="q-type" class="q-type">业务题 · 30 分</div>
+        <h2 id="q-company">公司名称</h2>
+        <p id="q-prompt" class="q-prompt">题干</p>
+        <div id="q-context" class="context-card hidden"></div>
+        <div id="q-options" class="options"></div>
+      </article>
+    </section>
+
+    <section id="screen-result" class="screen">
+      <div class="result-card">
+        <div class="badge">结算完成</div>
+        <h1 id="rank-title">双创之星</h1>
+        <div class="score-line"><span id="final-score">0</span><small id="max-score">/ 0</small></div>
+        <p id="result-tip" class="lead"></p>
+
+        <h3>等权组合真实阶段收益</h3>
+        <div class="return-grid">
+          <div class="return-box"><span>近 1 月</span><strong id="ret-1m">--</strong></div>
+          <div class="return-box"><span>近 3 月</span><strong id="ret-3m">--</strong></div>
+          <div class="return-box"><span>近半年</span><strong id="ret-6m">--</strong></div>
+        </div>
+        <p id="cache-time" class="tiny"></p>
+
+        <h3>公司明细</h3>
+        <div id="detail-list" class="detail-list"></div>
+
+        <h3>答题回顾</h3>
+        <div id="review-list" class="review-list"></div>
+
+        <div class="result-actions">
+          <button id="btn-again" class="primary-btn">再来一局</button>
+        </div>
+        <p class="tiny disclaimer">数据来自腾讯证券自选股接口。本小游戏仅用于学习互动，不构成投资建议。</p>
+      </div>
+    </section>
+
+    <div id="toast" class="toast hidden">加载中...</div>
+
+    <div id="fact-modal" class="fact-modal hidden" role="dialog" aria-modal="true">
+      <div class="fact-box">
+        <div class="fact-head">
+          <span class="fact-badge">硬核科技知识 · 已解锁</span>
+          <button id="btn-fact-close" class="ghost-btn" type="button">继续</button>
+        </div>
+        <h3 id="fact-title">标题</h3>
+        <p id="fact-body" class="fact-body">正文</p>
+        <p class="tiny">答错不可怕，可怕的是不知道为什么错。</p>
+      </div>
+    </div>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
