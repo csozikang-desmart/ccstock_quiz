@@ -1,0 +1,3 @@
+# 本项目仅使用 Python 标准库（http.server / urllib / json 等），
+# 不需要任何第三方依赖。akshare / pandas / requests 均已不再使用。
+# 此文件保留是为了让 Render 等平台识别为 Python 项目。
