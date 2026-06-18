@@ -1,0 +1,19 @@
+[Unit]
+Description=CCStock Quiz H5 Game (Python http.server)
+After=network.target
+
+[Service]
+Type=simple
+# 部署时把此路径改成你实际的部署位置
+WorkingDirectory=/opt/ccstock-quiz
+ExecStart=/usr/bin/python3 /opt/ccstock-quiz/server.py
+# 端口与绑定；server.py 默认监听 0.0.0.0:8000，通过环境变量可改
+Environment=HOST=127.0.0.1
+Environment=PORT=8000
+Restart=on-failure
+RestartSec=3
+StandardOutput=append:/var/log/ccstock-quiz.log
+StandardError=append:/var/log/ccstock-quiz.log
+
+[Install]
+WantedBy=multi-user.target
